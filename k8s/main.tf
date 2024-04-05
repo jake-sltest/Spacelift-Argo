@@ -7,7 +7,7 @@ resource "aws_eks_cluster" "my_cluster" {
   }
 
   vpc_config {
-    subnet_ids = ["subnet-0965f8311ebeae5df, subnet-0ff1423d91026dc01" ]
+    subnet_ids = ["subnet-0965f8311ebeae5df", "subnet-0ff1423d91026dc01" ]
   }
 
 }
@@ -17,7 +17,7 @@ resource "aws_eks_node_group" "node_group_one" {
   cluster_name    = aws_eks_cluster.my_cluster.name
   node_group_name = "node-group-1"
   node_role_arn   = "arn:aws:iam::993741443707:role/spacelift-main"
-  subnet_ids = ["subnet-0965f8311ebeae5df, subnet-0ff1423d91026dc01" ]
+  subnet_ids = ["subnet-0965f8311ebeae5df", "subnet-0ff1423d91026dc01" ]
   
   scaling_config {
     desired_size = 1
