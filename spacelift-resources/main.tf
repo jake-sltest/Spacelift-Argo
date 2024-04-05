@@ -4,7 +4,7 @@ resource "spacelift_stack" "base-infra" {
   space_id                     = "argo-demo-01HTN60KD33DFA0JPZJE5ZYSVC"
   branch                       = "main"
   description                  = "This stack creates a VPC and subnet"
-  labels                       = ["infracost, argo"]
+  labels                       = ["infracost", "argo"]
   name                         = "base-infra"
   project_root                 = "/vpc"
   repository                   = "Spacelift-argo"
@@ -18,7 +18,7 @@ resource "spacelift_stack" "k8s-stack" {
   space_id                     = "argo-demo-01HTN60KD33DFA0JPZJE5ZYSVC"
   branch                       = "main"
   description                  = "This stack creates a cluster"
-  labels                       = ["infracost, argo"]
+  labels                       = ["infracost", "argo"]
   name                         = "k8s-stack"
   project_root                 = "/k8s"
   repository                   = "Spacelift-argo"
