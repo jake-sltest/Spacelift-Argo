@@ -27,8 +27,7 @@ resource "spacelift_stack" "k8s-stack" {
   autodeploy        = true
 }
 
-#Create ansible context
-
+#Create context
 resource "spacelift_context" "infracost-context" {
   description = "Context for Infracost"
   name        = "Infracost Context "
