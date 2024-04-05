@@ -17,9 +17,9 @@ resource "spacelift_stack" "k8s-stack" {
   administrative               = false
   space_id                     = "argo-demo-01HTN60KD33DFA0JPZJE5ZYSVC"
   branch                       = "main"
-  description                  = "This stack creates cluster"
+  description                  = "This stack creates a cluster"
   labels                       = ["infracost, argo"]
-  name                         = "vpc-stack"
+  name                         = "k8s-stack"
   project_root                 = "/k8s"
   repository                   = "Spacelift-argo"
   enable_local_preview         = true
@@ -30,9 +30,9 @@ resource "spacelift_stack" "k8s-stack" {
 #Create ansible context
 
 resource "spacelift_context" "infracost-context" {
-  description = "Context for Terraform-Ansible workflow demo"
-  name        = "Ansible context test "
-  space_id    = "stack-dependencies-demo-01HES50MW0R4XW1AME0BPP8YVY"
+  description = "Context for Infracost"
+  name        = "Infracost Context "
+  space_id    = "argo-demo-01HTN60KD33DFA0JPZJE5ZYSVC"
   labels      = ["autoattach:argo"]
 }
 
