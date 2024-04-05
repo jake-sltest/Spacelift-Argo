@@ -7,7 +7,7 @@ resource "aws_eks_cluster" "my_cluster" {
   }
 
   vpc_config {
-    subnet_ids = ["subnet-066b3055952be9d0c" ]
+    subnet_ids = ["subnet-0965f8311ebeae5df, subnet-0ff1423d91026dc01" ]
   }
 
 }
