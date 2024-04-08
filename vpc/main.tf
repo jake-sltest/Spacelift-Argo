@@ -25,3 +25,30 @@ resource "aws_subnet" "argo_subnet_two" {
         Name = "spacelift-argo Public Subnet two"
     }
 }
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.argo_vpc.id
+
+  tags = {
+    Name = "igw"
+  }
+}
+
+
+resource "aws_eip" "nat" {
+
+  tags = {
+    Name = "nat"
+  }
+}
+
+resource "aws_nat_gateway" "nat" {
+  allocation_id = aws_eip.nat.id
+  subnet_id     = aws_subnet.public-us-east-1a.id
+
+  tags = {
+    Name = "nat"
+  }
+
+  depends_on = [aws_internet_gateway.igw]
+}
